@@ -8,6 +8,6 @@
 .main-link {
   font-size: 72px; /* Размер шрифта для ссылки */
   font-weight: bold; /* Жирный шрифт */
-  color: black; /* Цвет текста */
+  color: #1976d2; /* Цвет текста */
   text-decoration: none; /* Убираем подчеркивание */
 }

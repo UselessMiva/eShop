@@ -17,7 +17,7 @@ function Categories(props: CategoriesProps) {
 	}, []);
   
 	return (
-	  <>
+	  <div className={styles["center-container"]}>
 			{isMobile ? (
 				<><InputLabel id="demo-select-small-label">Категория</InputLabel>
 		     <Select className={styles["select"]} label="Category" value={0} onChange={(e) => props.chooseCategory(Number(e.target.value))}>
@@ -27,14 +27,14 @@ function Categories(props: CategoriesProps) {
 						))}
 		  </Select></>
 			) : (
-		  <ButtonGroup className={styles["button-group"]} variant="outlined" aria-label="Basic button group">
+		  <ButtonGroup className={styles["button-group"]}  variant="outlined" aria-label="Basic button group" >
 					<Button className={styles["category-button"]} key={0} onClick={() => props.chooseCategory(0)}>All</Button>
 					{categories.map(el => (
 			  <Button className={styles["category-button"]} key={el.id} onClick={() => props.chooseCategory(el.id)}>{el.name}</Button>
 					))}
 		  </ButtonGroup>
 			)}
-	  </>
+	  </div>
 	);
 }
   

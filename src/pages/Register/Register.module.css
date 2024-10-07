@@ -21,7 +21,7 @@
   width: 300px; /* Ширина формы */
 }
 .input-field {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .submit-button {

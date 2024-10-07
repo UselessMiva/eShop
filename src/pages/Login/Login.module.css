@@ -1,11 +1,3 @@
-.main-link {
-  font-size: 24px; /* Размер шрифта для ссылки */
-  font-weight: bold; /* Жирный шрифт */
-  color: black; /* Цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  margin-bottom: 20px; /* Отступ снизу для разделения с формой */
-}
-
 .login {
   display: flex;
   flex-direction: column;
@@ -21,7 +13,7 @@
   width: 300px; /* Ширина формы */
 }
 .input-field {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .submit-button {

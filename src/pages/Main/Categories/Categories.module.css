@@ -3,6 +3,12 @@
   display: flex;
   justify-content: center !important; /* Центрирование кнопок */
 }
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали (если нужно) */
+}
 
 .category-button {
   padding: 10px 20px; /* Отступы внутри кнопки */
