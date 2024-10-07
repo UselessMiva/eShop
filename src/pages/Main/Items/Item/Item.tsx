@@ -14,11 +14,9 @@ export default function Item(props: ItemProps) {
 	const add = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 		dispatch(cartActions.add(props.id));
-		
-		console.log("added");
 	};
 	const card = (
-		<React.Fragment>
+		<>
 			<CardContent className={styles["card"]}>
 				{props.images[1] ? (<img className={styles["card-image"]} src={props.images[0]}></img>) :(<ImageNotSupportedIcon height='400px'/> )
 				}
@@ -30,14 +28,14 @@ export default function Item(props: ItemProps) {
 					$ {props.price}
 				</Typography>
 				<ButtonGroup className={styles["card-buttons"]} size="large" variant="outlined">
-					<Button className={styles["btn"]} component={Link} to={`/products/${props.id}`} variant="contained">
+					<Button className={styles["btn"]} component={Link} to={`/products/${props.id}`} variant="contained" >
 						Подбробнее
 					</Button>
 					<Button className={styles["btn"]} variant="contained" onClick={add}>Добавить в корзину</Button>
 				</ButtonGroup>
 			</CardContent>
 			
-		</React.Fragment>
+		</>
 	);
 	return <> 
 		{card}

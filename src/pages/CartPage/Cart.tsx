@@ -6,9 +6,12 @@ import { Item } from "../../interfaces/Item.interface";
 import axios from "axios";
 import CartItem from "./CartItem/CartItem";
 import { cartActions } from "../../store/cart.slice";
+import { useNavigate } from "react-router-dom";
 export default function Cart() {
 	const [cartProducts, setCardProducts] = useState<Item[]>([]);
+	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
+	const jwt = useSelector((s: RootState) => s.user.jwt);
 	const items = useSelector((s: RootState) => s.cart.items);
 	const total = items.map(i => {
 		const product = cartProducts.find(item => item.id === i.id);
@@ -29,6 +32,11 @@ export default function Cart() {
 		
 		dispatch(cartActions.clean());
 	};
+	useEffect(() => {
+		if (!jwt) {
+			navigate("/auth/login");
+		}
+	}, [jwt, navigate]);
 	useEffect(() => {
 		loadAllItems();
 	}, []);

@@ -6,7 +6,7 @@
   margin-bottom: 20px; /* Отступ снизу для разделения с формой */
 }
 
-.login {
+.register {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,10 +17,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 300px; /* Ширина формы */
 }
-.input-field {
+.inputField {
   margin-bottom: 20px;
 }
 

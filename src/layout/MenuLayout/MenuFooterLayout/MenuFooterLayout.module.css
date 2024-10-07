@@ -1,0 +1,12 @@
+.menu-footer {
+  display: flex;
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: center; /* Центрируем содержимое по вертикали */
+  padding: 20px; /* Отступы вокруг меню */
+}
+
+.footer-link {
+  margin: 0 15px; /* Отступы между ссылками */
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit; /* Наследуем цвет текста от родительского элемента */
+}
