@@ -1,10 +1,10 @@
-.profileContainer {
+.profile-container {
   display: flex;
   justify-content: center; /* Выравнивание по верхнему краю */
   margin-top: 20px;
 }
 
-.profileSection {
+.profile-section {
   margin-top: 50px;
   margin-right: 20px; /* Отступ между аватаром и формой */
 }
@@ -19,13 +19,13 @@
   margin-top: 10px;
 }
 
-.formSection {
+.form-section {
   display: flex;
   flex-direction: column;
 }
 
-.inputField {
-  margin-top: 20px;
+.input-field {
+  margin-bottom: 20px !important ;
 }
 
 .submitButton {

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./MenuFooterLayout.module.css";
+import { Button } from "@mui/material";
 export default function MenuFooterLayout(){
 	return<div className={styles["menu-footer"]}>
-		<Link className={styles["footer-link"]} to='/contacts'>Контакты</Link>
-		<Link className={styles["footer-link"]} to='/about'>О нас</Link>
+		<Button component={Link} variant="contained" className={styles["button-link"]} to='/contacts'>Контакты</Button>
+		<Button  component={Link} variant="contained"  className={styles["button-link"]} to='/about'>О нас</Button>
 	</div>;
 }

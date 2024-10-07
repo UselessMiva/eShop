@@ -80,8 +80,8 @@ export function Profile() {
 	const renderProfile = () => {
 		if (profile) {
 		  return (
-				<div className={styles["profileContainer"]}>
-			  <div className={styles["profileSection"]}>
+				<div className={styles["profile-container"]}>
+			  <div className={styles["profile-section"]}>
 						<img src={profile?.avatar} alt="Avatar" className={styles["avatar"]} />
 						<div className={styles["profileInfo"]}>
 				  			<div>{profile?.name}</div>
@@ -90,21 +90,25 @@ export function Profile() {
 			  </div>
 			  <div >
 						<h2>Обновить данные</h2>
-						<form onSubmit={submit} className={styles["formSection"]}>
-				  			<TextField
+						<form onSubmit={submit} className={styles["form-section"]}>
+							<TextField
+								className={styles["input-field"]}
 								id="email"
 								label="Email"
 								name="email"
+								defaultValue={profile?.email}
+								helperText={errors.email || ""}
 								error={!!errors.email}
-								className={styles["inputField"]}
-				  			/>
+		  />
 				  			<TextField
 								id="password"
 								label="Password"
 								type="password"
 								name="password"
+								defaultValue={profile?.password}
 								error={!!errors.password}
-								className={styles["inputField"]}
+								helperText={errors.password || ""}
+								className={styles["input-field"]}
 				 			/>
 				 			<TextField
 								id="name"
@@ -112,9 +116,10 @@ export function Profile() {
 								label="Ваше имя"
 								placeholder="Имя"
 								variant="outlined"
-								helperText={errors.name}
+								defaultValue={profile?.name}
+								helperText={errors.name || ""}
 								error={!!errors.name}
-								className={styles["inputField"]}
+								className={styles["input-field"]}
 				  			/>
 				  			<TextField
 								id="avatar"
@@ -122,9 +127,10 @@ export function Profile() {
 								label="Ваш аватар"
 								placeholder="Ссылка на аватар"
 								variant="outlined"
-								helperText={errors.avatar}
+								defaultValue={profile?.avatar}
+								helperText={errors.avatar || ""}
 								error={!!errors.avatar}
-								className={styles["inputField"]}
+								className={styles["input-field"]}
 				  			/>
 				  <Button type="submit" className={styles.submitButton} variant="contained">Обновить</Button>
 						</form>

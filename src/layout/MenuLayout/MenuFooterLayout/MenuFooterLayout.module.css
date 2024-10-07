@@ -5,8 +5,7 @@
   padding: 20px; /* Отступы вокруг меню */
 }
 
-.footer-link {
-  margin: 0 15px; /* Отступы между ссылками */
-  text-decoration: none; /* Убираем подчеркивание */
-  color: inherit; /* Наследуем цвет текста от родительского элемента */
+.button-link {
+  margin: 10px !important;
+  width: 150px !important;
 }

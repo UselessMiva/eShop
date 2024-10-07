@@ -1,0 +1,14 @@
+.app-bar {
+  border-radius: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  font-size: 2rem; /* или другой размер, который вам нужен */
+  text-decoration: none;
+  color: inherit;
+}

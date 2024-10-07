@@ -91,7 +91,7 @@ export function Register() {
 					name="email"
 					helperText={errors.email || "Пример youremail@mail.com"}
 					error={!!errors.email}
-					className={styles["inputField"]}
+					className={styles["input-field"]}
 		  />
 		  <TextField
 					id="password"
@@ -100,7 +100,7 @@ export function Register() {
 					name="password"
 					helperText={errors.password || "Не менее 6 символов"}
 					error={!!errors.password}
-					className={styles["inputField"]}
+					className={styles["input-field"]}
 		  />
 		  <TextField
 					id="name"
@@ -110,7 +110,7 @@ export function Register() {
 					variant="outlined"
 					helperText={errors.name}
 					error={!!errors.name}
-					className={styles["inputField"]}
+					className={styles["input-field"]}
 		  />
 		  <TextField
 					id="avatar"
@@ -121,7 +121,7 @@ export function Register() {
 					variant="outlined"
 					helperText={errors.avatar}
 					error={!!errors.avatar}
-					className={styles["inputField"]}
+					className={styles["input-field"]}
 				/>
 				<Button className={styles["submit-button"]} variant="contained" type="submit">Зарегистрироваться</Button>
 		  </form>

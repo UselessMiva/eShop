@@ -1,14 +1,13 @@
 .button-group {
-  margin-top: 10px;
+  margin-top: 11px;
   display: flex;
-  justify-content: center; /* Центрирование кнопок */
+  justify-content: center !important; /* Центрирование кнопок */
 }
 
 .category-button {
   padding: 10px 20px; /* Отступы внутри кнопки */
   font-size: 16px; /* Размер шрифта для кнопки */
   background-color: #007bff; /* Цвет фона */
-  color: white; /* Цвет текста */
   border: none; /* Убираем рамку */
   border-radius: 5px; /* Скругление углов */
   cursor: pointer; /* Курсор при наведении */
@@ -16,6 +15,7 @@
 
 .category-button:hover {
   background-color: #0056b3; /* Цвет при наведении */
+  color: white; /* Цвет текста */
 }
 
 .select {

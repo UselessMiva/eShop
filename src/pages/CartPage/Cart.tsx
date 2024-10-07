@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
@@ -7,8 +6,11 @@ import axios from "axios";
 import CartItem from "./CartItem/CartItem";
 import { cartActions } from "../../store/cart.slice";
 import { useNavigate } from "react-router-dom";
+import { Button, IconButton, Snackbar, SnackbarCloseReason } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 export default function Cart() {
 	const [cartProducts, setCardProducts] = useState<Item[]>([]);
+	const [open, setOpen] = useState(false);
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
 	const jwt = useSelector((s: RootState) => s.user.jwt);
@@ -28,10 +30,38 @@ export default function Cart() {
 		const res = await Promise.all(items.map(i => getItem(i.id)));
 		setCardProducts(res);
 	};
-	const checkout = () => {
-		
+	const checkout = async() => {
+		handleClick();
 		dispatch(cartActions.clean());
 	};
+
+	const handleClick = () => {
+	  setOpen(true);
+	};
+  
+	const handleClose = (
+	  _event: React.SyntheticEvent | Event,
+	  reason?: SnackbarCloseReason
+	) => {
+	  if (reason === "clickaway") {
+			return;
+	  }
+  
+	  setOpen(false);
+	};
+  
+	const action = (
+	  <>
+			<IconButton
+		  		size="small"
+		  		aria-label="close"
+		  		color="inherit"
+		  		onClick={handleClose}
+			>
+				<CloseIcon fontSize="small" />
+			</IconButton>
+	  </>
+	);
 	useEffect(() => {
 		if (!jwt) {
 			navigate("/auth/login");
@@ -67,10 +97,22 @@ export default function Cart() {
 				</div>
 				<hr />
 				<div >
-					<button  onClick={checkout}>оформить</button>
+					<Button onClick={checkout} variant="contained">оформить</Button>
 				</div>
 			</div>
-      
+			<Snackbar
+				open={open}
+				autoHideDuration={6000}
+				onClose={handleClose}
+				message="Заказ оформлен"
+				action={action}
+				sx={{
+					"& .MuiSnackbarContent-root": {
+						backgroundColor: "white",
+						color: "blue"
+					}
+				}}
+			/>
 		</div>
 	);
 }

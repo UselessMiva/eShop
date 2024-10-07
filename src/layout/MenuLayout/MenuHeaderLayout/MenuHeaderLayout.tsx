@@ -15,7 +15,7 @@ import { getProfile, userActions } from "../../../store/user.slice";
 import { Link, useNavigate } from "react-router-dom";
 import { cartActions } from "../../../store/cart.slice";
 import LoginIcon from "@mui/icons-material/Login";
-
+import styles from "./MenuHeaderLayout.module.css";
 export default function PrimarySearchAppBar() {
 	const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -58,18 +58,27 @@ export default function PrimarySearchAppBar() {
 	};
   
 	const menuId = "primary-search-account-menu";
-	const LoggedInOrNot =()=> {
-		if(jwt){
-			return<>
-				<MenuItem onClick={logout}>Выйти</MenuItem>
-				<MenuItem onClick={handleMenuClose}><Link to='/profile'>Профиль</Link></MenuItem></>;
+	const LoggedInOrNot = () => {
+		if (jwt) {
+		  return (
+				<>
+			  <MenuItem onClick={logout}>Выйти</MenuItem>
+			  <MenuItem onClick={handleMenuClose}>
+						<Link to='/profile' className={styles["link"]}>Профиль</Link>
+			  </MenuItem>
+				</>
+		  );
+		} else {
+		  return (
+				<>
+			  <MenuItem component={Link} to='/auth/login' className={styles["link"]}>Войти</MenuItem>
+			  <MenuItem component={Link} to='/auth/register' className={styles["link"]}>Зарегистрироваться</MenuItem>
+				</>
+		  );
 		}
-		else {
-			return<>
-				<MenuItem component={Link} to='/auth/login'>Войти</MenuItem>
-				<MenuItem component={Link} to='/auth/register'>Зарегестрироваться</MenuItem></>;}
-	};
-	const renderMenu = (
+	  };
+	  
+	  const renderMenu = (
 		<Menu
 		  anchorEl={anchorEl}
 		  anchorOrigin={{
@@ -85,114 +94,115 @@ export default function PrimarySearchAppBar() {
 		  open={isMenuOpen}
 		  onClose={handleMenuClose}
 		>
-		  <LoggedInOrNot/>
+		  <LoggedInOrNot />
 		</Menu>
 	  );
-	const mobileMenuId = "primary-search-account-menu-mobile";
-	const renderMobileMenu = (
-	  <Menu
-			anchorEl={mobileMoreAnchorEl}
-			anchorOrigin={{
-		  vertical: "top",
-		  horizontal: "right"
-			}}
-			id={mobileMenuId}
-			keepMounted
-			transformOrigin={{
-		  vertical: "top",
-		  horizontal: "right"
-			}}
-			open={isMobileMenuOpen}
-			onClose={handleMobileMenuClose}
-	  >
-			<MenuItem>
-			</MenuItem>
-			<MenuItem>
-		  <IconButton
-					size="large"
-					aria-label="show the number of items in the cart"
-					color="inherit"
-					component = {Link}
-					to='/cart'
-		  >			
-		  
-					<Badge badgeContent={items.reduce((acc, item) => acc += item.count, 0)} color="error">
-			  <ShoppingCartIcon/>
-					</Badge>
-		  </IconButton>
-			</MenuItem>
-			<MenuItem onClick={handleProfileMenuOpen}>
-		  <IconButton
-					size="large"
-					aria-label="account of current user"
-					aria-controls="primary-search-account-menu"
-					aria-haspopup="true"
-					color="inherit"
-					
-		  >
-					{profile ? (
-						<img src ={profile?.avatar} height='60px' width='60px'/>) : (<LoginIcon height='60px' width='60px' />)}
-		  </IconButton>
-		  
-			</MenuItem>
-	  </Menu>
-	);
-  
-	return (
-	  <Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static">
-		  <Toolbar>
-					<Typography
-			  variant="h6"
-			  noWrap
-			  sx={{ display: { sm: "block" } }}
-			  component={Link} // Используйте Link как компонент
-			  to='/'
-					>
-			  eShop
-					</Typography>
-					<Box sx={{ flexGrow: 1 }} />
-					<Box sx={{ display: { xs: "none", md: "flex" } }}>
-			  <IconButton
-							size="large"
-							aria-label="show "
-							color="inherit"
-							component = {Link}
-							to='/cart'
+	  
+	  const mobileMenuId = "primary-search-account-menu-mobile";
+	  const renderMobileMenu = (
+		<Menu
+		  anchorEl={mobileMoreAnchorEl}
+		  anchorOrigin={{
+				vertical: "top",
+				horizontal: "right"
+		  }}
+		  id={mobileMenuId}
+		  keepMounted
+		  transformOrigin={{
+				vertical: "top",
+				horizontal: "right"
+		  }}
+		  open={isMobileMenuOpen}
+		  onClose={handleMobileMenuClose}
+		>
+		  <MenuItem>
+				<IconButton
+			  size="large"
+			  aria-label="show the number of items in the cart"
+			  color="inherit"
+			  component={Link}
+			  to='/cart'
+				>
+			  <Badge badgeContent={items.reduce((acc, item) => acc += item.count, 0)} color="error">
+						<ShoppingCartIcon style={{ height: "60px", width: "60px"}} />
+			  </Badge>
+				</IconButton>
+		  </MenuItem>
+		  <MenuItem onClick={handleProfileMenuOpen}>
+				<IconButton
+			  size="large"
+			  aria-label="account of current user"
+			  aria-controls="primary-search-account-menu"
+			  aria-haspopup="true"
+			  color="inherit"
+				>
+			  {profile ? (
+						<img src={profile?.avatar} alt="avatar" style={{ height: "60px", width: "60px", borderRadius: "50%" }} />
+			  ) : (
+						<LoginIcon height='60px' width='60px' />
+			  )}
+				</IconButton>
+		  </MenuItem>
+		</Menu>
+	  );
+	  return (
+		<Box sx={{ flexGrow: 1 }}>
+		  <AppBar position="static" className={styles["app-bar"]}>
+				<Toolbar>
+			  <Typography
+						variant="h4"
+						noWrap
+						component={Link}
+						to='/'
+						className={styles["title"]}
 			  >
-							<Badge badgeContent={items.reduce((acc, item) => acc += item.count, 0)} color="error">
-				  <ShoppingCartIcon/>
-							</Badge>
-			  </IconButton>
-			  <IconButton
-							size="large"
-							edge="end"
-							aria-label="show the number of items in the cart"
-							aria-controls={menuId}
-							aria-haspopup="true"
-							onClick={handleProfileMenuOpen}
-							color="inherit"
-			  >
-							{profile ? (
-								<img src ={profile?.avatar} height='60px' width='60px'/>) : (<LoginIcon height='60px' width='60px' />)}
-			  </IconButton>
-					</Box>
-					<Box sx={{ display: { xs: "flex", md: "none" } }}>
-			  <IconButton
-							size="large"
-							aria-label="show more"
-							aria-controls={mobileMenuId}
-							aria-haspopup="true"
-							onClick={handleMobileMenuOpen}
-							color="inherit"
-			  >
-							<MoreIcon />
-			  </IconButton>
-					</Box>
-		  </Toolbar>
-			</AppBar>
-			{renderMobileMenu}
-			{renderMenu}
-	  </Box>
-	);
+				eShop
+			  </Typography>
+			  <Box sx={{ flexGrow: 1 }} />
+			  <Box sx={{ display: { xs: "none", md: "flex" } }}>
+						<IconButton
+				  size="large"
+				  aria-label="show the number of items in the cart"
+				  color="inherit"
+				  component={Link}
+				  to='/cart'
+						>
+				  <Badge badgeContent={items.reduce((acc, item) => acc += item.count, 0)} color="error">
+								<ShoppingCartIcon style={{ height: "30xp", width: "30px"}}/>
+				  </Badge>
+						</IconButton>
+						<IconButton
+				  size="large"
+				  edge="end"
+				  aria-label="account of current user"
+				  aria-controls={menuId}
+				  aria-haspopup="true"
+				  onClick={handleProfileMenuOpen}
+				  color="inherit"
+						>
+				  {profile ? (
+								<img src={profile?.avatar} alt="avatar" style={{ height: "60px", width: "60px", borderRadius: "50%" }}/> // Применяем класс для аватара
+				  ) : (
+								<LoginIcon className={styles["avatar"]} />
+				  )}
+						</IconButton>
+			  </Box>
+			  <Box sx={{ display: { xs: "flex", md: "none" } }}>
+						<IconButton
+				  size="large"
+				  aria-label="show more"
+				  aria-controls={mobileMenuId}
+				  aria-haspopup="true"
+				  onClick={handleMobileMenuOpen}
+				  color="inherit"
+						>
+				  <MoreIcon />
+						</IconButton>
+			  </Box>
+				</Toolbar>
+		  </AppBar>
+		  {renderMobileMenu}
+		  {renderMenu}
+		</Box>
+	  );
 }
