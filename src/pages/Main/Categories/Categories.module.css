@@ -1,0 +1,33 @@
+.button-group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Центрирование кнопок */
+}
+
+.category-button {
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  font-size: 16px; /* Размер шрифта для кнопки */
+  background-color: #007bff; /* Цвет фона */
+  color: white; /* Цвет текста */
+  border: none; /* Убираем рамку */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Курсор при наведении */
+}
+
+.category-button:hover {
+  background-color: #0056b3; /* Цвет при наведении */
+}
+
+.select {
+  margin-top: 10px;
+  padding: 10px; /* Отступы внутри селекта */
+  font-size: 16px; /* Размер шрифта для селекта */
+  width: 100%; /* Занимает всю ширину родителя */
+}
+
+@media (max-width: 900px) {
+  .button-group {
+    flex-direction: column; /* Вертикальное расположение для мобильных устройств */
+    align-items: center; /* Центрирование по горизонтали */
+  }
+}

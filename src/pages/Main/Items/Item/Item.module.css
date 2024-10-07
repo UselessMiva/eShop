@@ -1,0 +1,48 @@
+.card {
+  width: 420px; /* Ширина карточки */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Скрытие переполнения */
+  margin: 10px; /* Отступы между карточками */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение содержимого */
+  justify-content: center; /* Центрирование содержимого по оси Y */
+}
+
+.card-image {
+  width: 100%; /* Максимальная ширина изображения */
+  max-height: 400px; /* Максимальная высота изображения */
+  object-fit: cover; /* Обеспечение правильного отображения изображения */
+  border-radius: 5px;
+}
+
+.card-title {
+  margin: 16px; /* Отступы вокруг заголовка */
+  display: -webkit-box; /* Использование flexbox для обрезки текста */
+  overflow: hidden; /* Скрытие переполнения текста */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  -webkit-line-clamp: 1; /* Ограничение до двух строк */
+  text-overflow: ellipsis; /* Добавление многоточия для обрезанного текста */
+}
+
+.card-description {
+  margin: 0 16px; /* Отступы вокруг описания */
+  max-width: 400px; /* Ограничение ширины описания до 400 пикселей */
+  overflow: hidden; /* Скрытие переполнения текста */
+  display: -webkit-box; /* Использование flexbox для обрезки текста */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  -webkit-line-clamp: 2; /* Ограничение до двух строк */
+  text-overflow: ellipsis; /* Добавление многоточия для обрезанного текста */
+}
+.card-price {
+  margin: 8px 16px; /* Отступы вокруг цены */
+  font-size: 30px;
+}
+.card-buttons {
+  display: flex;
+  padding: 0 16px 16px; /* Отступы для кнопок */
+}
+
+.btn {
+  flex: 1; /* Кнопки занимают всю доступную ширину */
+}

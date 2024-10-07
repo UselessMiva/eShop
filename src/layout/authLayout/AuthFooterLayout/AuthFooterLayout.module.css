@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center; /* Центрирует содержимое по горизонтали */
+  margin-bottom: 20px; /* Отступ снизу для разделения с формой */
+}
+
+.copyright {
+  font-size: 24px; /* Размер шрифта для ссылки */
+  font-weight: bold; /* Жирный шрифт */
+  color: black; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+}

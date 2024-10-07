@@ -1,0 +1,43 @@
+.main-link {
+  font-size: 24px; /* Размер шрифта для ссылки */
+  font-weight: bold; /* Жирный шрифт */
+  color: black; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  margin-bottom: 20px; /* Отступ снизу для разделения с формой */
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Занимает всю высоту экрана */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 300px; /* Ширина формы */
+}
+.input-field {
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  margin-top: 20px; /* Отступ сверху для кнопки */
+  padding: 15px; /* Увеличение размера кнопки */
+  font-size: 16px; /* Размер текста */
+  cursor: pointer; /* Курсор для кнопки */
+}
+
+.links {
+  margin-top: 20px; /* Отступ сверху для блока с ссылками */
+  text-align: center; /* Центрирование текста */
+}
+
+.error {
+  color: red;
+  font-weight: 400;
+  font-size: 24px;
+}
