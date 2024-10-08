@@ -32,7 +32,6 @@ export const login = createAsyncThunk(
           password: params.password,
         }
       );
-      console.log(data);
       return data.access_token;
     } catch (e) {
       if (e instanceof AxiosError) {

@@ -137,7 +137,7 @@ export default function PrimarySearchAppBar() {
 			  color="inherit"
 				>
 			  {profile ? (
-						<img src={profile?.avatar} alt="avatar" style={{ height: "60px", width: "60px", borderRadius: "50%" }} />
+						<img src={profile?.avatar} alt="avatar" className={styles["avatar"]} />
 			  ) : (
 						<LoginIcon height='60px' width='60px' />
 			  )}
@@ -181,7 +181,7 @@ export default function PrimarySearchAppBar() {
 				  color="inherit"
 						>
 				  {profile ? (
-								<img src={profile?.avatar} alt="avatar" style={{ height: "60px", width: "60px", borderRadius: "50%" }}/> // Применяем класс для аватара
+								<img src={profile?.avatar} alt="avatar" className={styles["avatar"]}/> // Применяем класс для аватара
 				  ) : (
 								<LoginIcon className={styles["avatar"]} />
 				  )}

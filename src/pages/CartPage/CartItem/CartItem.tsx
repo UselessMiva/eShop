@@ -7,6 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "./CartItem.module.css";
+import { Box } from "@mui/material";
 function CartItem(props: CartItemProps) {
 	console.log(props);
 	const dispatch = useDispatch<AppDispatch>();
@@ -24,21 +25,21 @@ function CartItem(props: CartItemProps) {
 
 
 	return (
-		<div className={styles["cart-item"]}>
-			<div className={styles["cart-item-details"]}>
+		<Box className={styles["cart-item"]}>
+			<Box className={styles["cart-item-details"]}>
 				<img src={`${props.images[0]}`}/>
-				<div>
-					<div >{props.title}</div>
-					<div >{props.price}&nbsp;$</div>
-				</div>
-				<div className={styles["cart-item-controls"]}>
+				<Box>
+					<Box >{props.title}</Box>
+					<Box >{props.price}&nbsp;$</Box>
+				</Box>
+				<Box className={styles["cart-item-controls"]}>
 					<RemoveIcon onClick={descrease} />
-					<div >{props.count}</div>
+					<Box >{props.count}</Box>
 					<AddIcon onClick={increase}/>
 					<DeleteIcon onClick={remove}/>
-				</div>
-			</div>
-		</div>
+				</Box>
+			</Box>
+		</Box>
 	);
 }
 export default CartItem;

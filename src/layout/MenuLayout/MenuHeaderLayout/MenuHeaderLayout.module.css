@@ -12,3 +12,12 @@
   text-decoration: none;
   color: inherit;
 }
+.avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.shopping-cart {
+  height: 60px;
+  width: 60px;
+}

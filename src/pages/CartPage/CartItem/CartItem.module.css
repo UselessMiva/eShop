@@ -1,12 +1,17 @@
 .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 500px;
 }
 
 .cart-item img {
   width: 100px; /* или другой размер */
   height: auto;
+  border-radius: 10px;
   margin-right: 10px;
 }
 
