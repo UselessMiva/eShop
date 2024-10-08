@@ -3,29 +3,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Занимает всю высоту экрана */
 }
 
 .form {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  width: 300px; /* Ширина формы */
+  width: 300px;
 }
 .input-field {
   margin-bottom: 20px !important;
 }
 
 .submit-button {
-  margin-top: 20px; /* Отступ сверху для кнопки */
-  padding: 15px; /* Увеличение размера кнопки */
-  font-size: 16px; /* Размер текста */
-  cursor: pointer; /* Курсор для кнопки */
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
 }
-
-.links {
-  margin-top: 20px; /* Отступ сверху для блока с ссылками */
-  text-align: center; /* Центрирование текста */
+.link-to-register {
+  margin-top: 20px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: #1976d2;
 }
 
 .error {

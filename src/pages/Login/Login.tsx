@@ -93,9 +93,9 @@ export function Login() {
 		  <Button className={styles["submit-button"]} variant="contained" type="submit">Вход</Button>
 			</form>
 		
-			<div className={styles["links"]}>
+			<div className={styles["link-to-register"]}>
 		  <div>Нет акканута?</div>
-		  <Link to="/auth/register">Зарегистрироваться</Link>
+		  <Link to="/auth/register" className={styles["link"]}>Зарегистрироваться</Link>
 			</div>
 	  </div>
 	);

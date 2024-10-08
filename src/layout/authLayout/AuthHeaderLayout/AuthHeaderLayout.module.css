@@ -1,13 +1,11 @@
 .link-container {
   display: flex;
-  justify-content: center; /* Центрирует содержимое по горизонтали */
-
-  margin: 100px 0 0 0; /* Отступ снизу для разделения с формой */
+  justify-content: center;
 }
 
 .main-link {
-  font-size: 72px; /* Размер шрифта для ссылки */
-  font-weight: bold; /* Жирный шрифт */
-  color: #1976d2; /* Цвет текста */
-  text-decoration: none; /* Убираем подчеркивание */
+  font-size: 72px;
+  font-weight: bold;
+  color: #1976d2;
+  text-decoration: none;
 }
